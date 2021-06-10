@@ -1,67 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Suivi de croissance des enfants</h1>
-    <h2>Saisie des mesures</h2>
-    <br />
-    <br />
-    <select name="listePatient" id="listepat">
-    </select>
-    
-    <br />
-    <br />
-    <form>
-    <table>
-        <tr>
-        <td>Age (en mois)</td>
-        <td>
-            <input id="Age" value="" type="text" size="40" ></input>
-        </td>
-    </tr>
-    <tr>
-        <td>Poids (grammes)</td>
-        <td>
-            <input id="Poids" value="" type= "text" size ="40" ></input>
-        </td>
-    </tr>
-    <tr>
-        <td>Taille (cm)</td>
-        <td>
-            <input id="Taille" type="text" value="" ></input>
-        </td>
-    </tr>
-    <tr>
-        <td>Périmètre cranien (cm)</td>
-        <td>
-            <input id="Peri" type="text" value="" ></input>
-        </td>
-    </tr>
+<html lang="form">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="saisie.css" />
+        <title>Saisie données</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Suivi de croissance des enfants</h1>
+            <h2>Saisie des mesures</h2>
+            <br />
+            <br />
+            <select name="listePatient" id="listepat"></select>
 
-    </table>   
-</form>
+            <br />
+            <br />
+            <form>
+                <table>
+                    <tr>
+                        <td>Age (mois)</td>
+                        <td>
+                            <input id="Age" value="" type="text" size="20" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Poids (grammes)</td>
+                        <td>
+                            <input id="Poids" value="" type="text" size="20" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Taille (cm)</td>
+                            <td>
+                            <input id="Taille" type="text" value="" size="20" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Périmètre cranien (cm)</td>
+                        <td>
+                            <input id="Peri" type="text" value="" size="20" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
 
-    <br />
-    <br />
-        <button id  = "BoutonPat"  >Valider</button>
-        <button id  = "BoutonAnn"  >Annuler</button>
-    </p>
+            <br />
+            <br />
+            <p>
+                <button class="boutVal" id="BoutonPat">Valider</button>
+                <button class="boutAnn" id="BoutonAnn">Annuler</button>
+            </p>
 
-    <br />
-    <br />
-    <a class="boutonNouveau">
-        <button onclick="window.location.href = './nouveau.html';">Créer un patient</button>
-</a>
-<br />
-<br />
-<a class="boutonRetour">
-    <button onclick="window.location.href = './index.html';">Accueil</button>
-</a>
-<script src="saisie.js"></script>
-</body>
+            <br />
+            <br />
+            
+                <button class="boutonNouveau" onclick="window.location.href = './nouveau.html';">
+                    Créer un patient
+                </button>
+
+            <br />
+            <br />
+                <button
+                    class="bouton"
+                    onclick="window.location.href = './index.html';"
+                >
+                    Accueil
+                </button>
+
+            <script src="saisie.js"></script>
+        </div>
+    </body>
 </html>

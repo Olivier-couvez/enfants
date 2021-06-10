@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <title>Comment changer couleur d'un bouton en HTML et CSS ?</title>
+    <style>
+      .bouton {
+        background-color: #008000;
+        border: none;
+        color: white;
+        margin: 10px;
+        padding: 10px;
+        text-decoration: none;
+        text-align: center;
+        display: inline-block;
+        font-size: 15px;
+        cursor: pointer;
+      }
+      .bouton:hover {
+        background-color: #225222;
+        color: white;
+      }
+      </style>
+  </head>
+
+  <body>
+    <!--Div that will hold the pie chart-->
+    <div id="chart_div"></div>
+    <script src="test.js"></script>
+
+
+    <button class="bouton">Bouton avec la balise button</button>
+    <input type="button" class="bouton" value="Bouton avec la balise input">
+    <a href="#" class="bouton">Bouton avec la balise a</a>
+
+
+
+    <form action="">
+      <input name='choix' type="radio" value=0>
+      <input name='choix' type="radio" value=1>
+      <input name='choix' type="radio" value=2>
+</form>
+<script>
+      document.querySelector('form').addEventListener('change', function () {
+            var elts = document.querySelectorAll('input');
+            for (var i = 0; i < elts.length; i++) {
+                  if ( elts[i].checked === true ) break;
+            }
+            console.log('value => '+elts[i].value);		
+      })
+</script>
+
+  </body>
+</html>

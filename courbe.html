@@ -1,17 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Suivi de croissance des enfants</h1>
-    <h2>Visulatisation des courbes</h2>
-    <a class="boutonRetour">
-        <button onclick="window.location.href = './index.html';">Accueil</button>
-</a>
-<script src="saisie.js"></script>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script
+            type="text/javascript"
+            src="https://www.gstatic.com/charts/loader.js"
+        ></script>
+        <title>Courbes</title>
+    </head>
+    <body>
+        <h1>Suivi de croissance des enfants</h1>
+        <h2>Visulatisation des courbes</h2>
+        <br />
+        <br />
+        <select name="listePatient" id="listepat"></select>
+        <br />
+        <br />
+        <a class="boutonCourbe">
+            <button id="BoutonCourbe">Afficher la courbe</button>
+        </a>
+        <br />
+        <br />
+        <a class="boutonRetour">
+            <button onclick="window.location.href = './index.html';">
+                Accueil
+            </button>
+        </a>
+        <br />
+        <br />
+        <div id="ChartPoids" style="width: 700px; height: 400px"></div>
+        <br />
+        <br />
+        <div id="ChartTaille" style="width: 700px; height: 400px"></div>
+        <br />
+        <br />
+        <div id="ChartPeri" style="width: 700px; height: 400px"></div>
+        <script src="courbe.js"></script>
+    </body>
 </html>

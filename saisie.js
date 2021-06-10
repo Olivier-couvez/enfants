@@ -4,24 +4,28 @@ var Age = document.querySelector("#Age");
 var Poids = document.querySelector("#Poids");
 var Taille = document.querySelector("#Taille");
 var Peri = document.querySelector("#Peri");
+var selectTrie = new Array();
+var i = 0;
 
 clePat = "";
 
-for (let i = 0; i < localStorage.length; i++) {
+for (i = 0; i < localStorage.length; i++) {
   let cle = localStorage.key(i);
-  // if (i == 0) {
-  //     clePat = cle;
-  // }
-  let valeur = JSON.parse(localStorage.getItem(cle));
-  console.log(valeur["nom"], valeur.prenom, valeur.date);
+  let valeur = JSON.parse(localStorage.getItem(cle)); 
+  selectTrie[i] = valeur.nom + " - " + valeur.prenom + " - " + valeur.datenaiss
+}
+
+selectTrie.sort();
+
+for (i = 0; i < localStorage.length; i++) {
+
   optionItemDep = document.createElement("option");
-  optionItemDep.appendChild(
-    document.createTextNode(
-      valeur.nom + " - " + valeur.prenom + " - " + valeur.date
-    )
+  optionItemDep.appendChild(document.createTextNode(selectTrie[i])
   );
   listepat.appendChild(optionItemDep);
 }
+
+
 
 nBoutonvalPat.addEventListener("click", EnregDonneesPatient);
 nBoutonvalAnn.addEventListener("click", AnnuleSaisie);
@@ -35,7 +39,7 @@ function EnregDonneesPatient() {
     Peri.value != ""
   ) {
 
-      if (ageNum > 0) {
+      if (ageNum >= 0) {
           if (ageNum < 35){
           
       

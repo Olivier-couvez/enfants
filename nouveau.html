@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="nouveau.css">
+    <title>Nouveau Patient</title>
 </head>
 <body>
+    <div class="container">
     <h1>Suivi de croissance des enfants</h1>
     <h2>Nouveau patient</h2>
     <br />
@@ -17,7 +19,7 @@
             <tr>
             <td>nom</td>
             <td>
-                <input type="text" id="nom" value="" size="40"></input>
+                <input type="text" id="nom" value="" size="40" ></input>
             </td>
         </tr>
         <tr>
@@ -29,22 +31,31 @@
         <tr>
             <td>Date</td>
             <td>
-                <input type="date" id="Datenaiss" value="" ></input>
+                <input type="date" id="datenaiss" value="" ></input>
             </td>
         </tr>
     
         </table>   
-        <form>
-            <input type="button" id="boutonEcriture" value="Valider" />
-            <br />
+
+        <form action="" id="formRadio">
+            <label>Garçon
+            <input id="garconRadio" name="choix" type="radio" value="0" checked>
+        </label>
+        <label>Fille
+            <input id="filleRadio" name="choix" type="radio" value="1">
+            </label>
         </form>
+        <br />
+        <br />
+            <input class="validerBouton" type="button" id="boutonEcriture" value="Valider" />
     </div>
     <script src="stockage.js"></script>
+
     <br/>
     <br/>
     <a class="boutonRetour">
-        <button onclick="window.location.href = './saisie.html';">Retour à la saisie</button>
-
-</a>
+        <button class="bouton" onclick="window.location.href = './saisie.html';">Retour à la saisie</button>
+    </a>
+</div>
 </body>
 </html>
