@@ -17,3 +17,39 @@ font-size: 1.6rem;
 h1, h2{
       text-align: center;
 }
+
+.boutonCourbe {
+  background-color: #0e1bda;
+  border: none;
+  color: white;
+  margin: 10px;
+  padding: 10px;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.boutonCourbe:hover {
+  background-color: #050a49;
+  color: white;
+}
+
+.boutonSaisie {
+  background-color: #1563da;
+  border: none;
+  color: white;
+  margin: 10px;
+  padding: 10px;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+.boutonSaisie:hover {
+  background-color:  #07306d;
+  color: white;
+}

@@ -10,10 +10,10 @@ var poidsGMax = [
       10200, 10400, 10600, 10800, 10900, 11200, 11800, 12000, 12200, 12600,
       13000,
 ];
-var tailleGMin = [46, 48, 52, 54, 57, 59, 61, 62, 64, 65, 66, 67, 68];
-var tailleGMax = [54, 60, 64, 67, 70, 72, 74, 76, 78, 79, 80, 82, 83];
-var periGMin = [32, 33, 34, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45];
-var periGMax = [37, 38, 39, 41, 43, 44, 45, 46, 47, 48, 49, 50, 51];
+var tailleGMin = [46, 46, 47, 47, 48, 48, 49, 49, 51, 52, 53, 54, 55, 55, 57, 58, 59, 59, 60, 61, 61, 62, 62, 63, 63, 64, 65, 65, 66, 66, 67, 67, 68, 68, 69, 69];
+var tailleGMax = [54, 54, 55, 55, 56, 56, 57, 57, 58, 58, 59, 60, 60, 60, 64, 64, 65, 65, 66, 66, 67, 67, 68, 70, 71, 72, 74, 74, 76, 78, 78, 79, 80, 80, 82, 83];
+var periGMin =   [32, 32, 33, 33, 34, 34, 35, 35, 36, 36, 36, 37, 37, 38, 38, 38, 39, 39, 40, 40, 40, 41, 41, 42, 42, 43, 43, 44, 44, 45, 45];
+var periGMax =   [37, 37, 38, 38, 39, 39, 40, 40, 41, 41, 42, 42, 43, 43, 44, 44, 45, 45, 46, 46, 46, 47, 47, 48, 48, 49, 49, 50, 50, 51, 51];
 //Filles
 var poidsFMin = [
       2400, 3200, 4200, 4500, 4800, 5300, 5800, 6000, 6400, 6600, 6800, 7000,
@@ -94,7 +94,7 @@ function AfficheCourbes() {
       google.charts.setOnLoadCallback(affGraphiquesPoids);
       google.charts.setOnLoadCallback(affGraphiquesTaille);
       google.charts.setOnLoadCallback(affGraphiquesPeri);
-      //google.charts.setOnLoadCallback(affGraphiquesArea);
+      google.charts.setOnLoadCallback(affGraphiquesArea);
 }
 
 
@@ -204,7 +204,7 @@ function affGraphiquesArea() {
       }
 
       var options = {
-                  title: "Courbes des Périmètres craniens d'un enfant",
+                  title: "Courbes des Périmètres craniens d'un enfant TEST AREA !!!!",
                   subtitle: "En cm",
                   curveType:'function',
                   lineWidth: 5,

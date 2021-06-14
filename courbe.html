@@ -8,9 +8,11 @@
             type="text/javascript"
             src="https://www.gstatic.com/charts/loader.js"
         ></script>
+        <link rel="stylesheet" href="courbe.css" />
         <title>Courbes</title>
     </head>
     <body>
+        <div class="container">
         <h1>Suivi de croissance des enfants</h1>
         <h2>Visulatisation des courbes</h2>
         <br />
@@ -18,16 +20,19 @@
         <select name="listePatient" id="listepat"></select>
         <br />
         <br />
-        <a class="boutonCourbe">
-            <button id="BoutonCourbe">Afficher la courbe</button>
-        </a>
+        <button class="boutonCourbe" id="BoutonCourbe">
+            Afficher la courbe
+        </button>
+
         <br />
         <br />
-        <a class="boutonRetour">
-            <button onclick="window.location.href = './index.html';">
-                Accueil
-            </button>
-        </a>
+        <button
+            class="boutonRetour"
+            onclick="window.location.href = './index.html';"
+        >
+            Accueil
+        </button>
+
         <br />
         <br />
         <div id="ChartPoids" style="width: 700px; height: 400px"></div>
@@ -40,6 +45,7 @@
         <br />
         <br />
         <div id="ChartArea" style="width: 700px; height: 400px"></div>
+        <div class="container">
         <script src="courbe.js"></script>
     </body>
 </html>
