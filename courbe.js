@@ -45,7 +45,7 @@ var valMinPe = new Array();
 var valMaxPe = new Array();
 
 // Load the Visualization API and the corechart package.
-google.charts.load("current", { packages: ["line"] });
+google.charts.load("current", { packages: ["line", "corechart"] });
 // Set a callback to run when the Google Visualization API is loaded.
 
 clePat = "";
@@ -84,16 +84,17 @@ function AfficheCourbes() {
       } else {
             valMinP = poidsFMin;
             valMaxP = poidsFMax;
-            valMinT = tailleGMin;
-            valMaxT = tailleGMax;
-            valMinPe = periGMin;
-            valMaxPe = periGMax;
+            valMinT = tailleFMin;
+            valMaxT = tailleFMax;
+            valMinPe = periFMin;
+            valMaxPe = periFMax;
       }
 
       // Set a callback to run when the Google Visualization API is loaded.
       google.charts.setOnLoadCallback(affGraphiquesPoids);
       google.charts.setOnLoadCallback(affGraphiquesTaille);
       google.charts.setOnLoadCallback(affGraphiquesPeri);
+      //google.charts.setOnLoadCallback(affGraphiquesArea);
 }
 
 
@@ -114,15 +115,17 @@ function affGraphiquesPoids() {
       }
 
       var options = {
-            chart: {
                   title: "Courbes de poids d'un enfant",
                   subtitle: "En grammes",
-            },
+                  curveType:'function',
+                  lineWidth: 5,
+                  series: [{'color': '#F1CA3A'}],
+                  intervals: { 'style':'area' },
       };
 
-      var chart = new google.charts.Line(document.getElementById("ChartPoids"));
+      var chart = new google.visualization.LineChart(document.getElementById("ChartPoids"));
 
-      chart.draw(data, google.charts.Line.convertOptions(options));
+      chart.draw(data, options);
 }
 
 function affGraphiquesTaille() {
@@ -141,15 +144,17 @@ function affGraphiquesTaille() {
       }
 
       var options = {
-            chart: {
                   title: "Courbes de taille d'un enfant",
                   subtitle: "En cm",
-            },
+                  curveType:'function',
+                  lineWidth: 5,
+                  series: [{'color': '#F1CA3A'}],
+                  intervals: { 'style':'area' },
       };
 
-      var chart1 = new google.charts.Line(document.getElementById("ChartTaille"));
+      var chart1 = new google.visualization.LineChart(document.getElementById("ChartTaille"));
 
-      chart1.draw(data1, google.charts.Line.convertOptions(options));
+      chart1.draw(data1, options);
 }
 
 function affGraphiquesPeri() {
@@ -168,13 +173,50 @@ function affGraphiquesPeri() {
       }
 
       var options = {
-            chart: {
-                  title: "Courbes des Périmètre cranien d'un enfant",
+                  title: "Courbes des Périmètres craniens d'un enfant",
                   subtitle: "En cm",
-            },
+                  curveType:'function',
+                  lineWidth: 5,
+                  series: [{'color': '#F1CA3A'}],
+                  intervals: { 'style':'area' },
       };
 
-      var chart2 = new google.charts.Line(document.getElementById("ChartPeri"));
+      var chart2 = new google.visualization.LineChart(document.getElementById("ChartPeri"));
 
-      chart2.draw(data2, google.charts.Line.convertOptions(options));
+      chart2.draw(data2, options);
+}
+
+function affGraphiquesArea() {
+      // Create the data table.
+      var data3 = new google.visualization.DataTable();
+      data3.addColumn("number", "Mois");
+
+      data3.addColumn("number", "L' enfant");
+
+      data3.addColumn({id:'i0', type:'number', role:'interval'});
+        data3.addColumn({id:'i1', type:'number', role:'interval'});
+
+      for (i = 0; i < valMinPe.length; i++) {
+            console.log(valeur.poids[i]);
+            data3.addRows([
+                  [i, parseInt(valeur.peri[i]),valMinPe[i],  valMaxPe[i]],
+            ]);
+      }
+
+      var options = {
+                  title: "Courbes des Périmètres craniens d'un enfant",
+                  subtitle: "En cm",
+                  curveType:'function',
+                  lineWidth: 5,
+                  intervals: { 'color':'series-color' },
+                  interval: {
+                      'i0': { 'color': '#4374E0', 'style':'bars', 'barWidth':0, 'lineWidth':4, 'pointSize':8, 'fillOpacity':1 },
+                      'i1': { 'color': '#E49307', 'style':'bars', 'barWidth':0, 'lineWidth':4, 'pointSize':8, 'fillOpacity':1 },
+                      
+                  },
+      };
+
+      var chart3 = new google.visualization.LineChart(document.getElementById("ChartArea"));
+
+      chart3.draw(data3, options);
 }
